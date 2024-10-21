@@ -1,0 +1,71 @@
+@use '../utils' as *;
+
+
+.vl-btn{
+    background: var(--vl-gradient-1);
+    padding: 16px 45px;
+    font-size: 18px;
+    font-family: var(--vl-fonts-figtree);
+    border-radius: 8px;
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    overflow: hidden; 
+    &:hover{
+        & .vl-btn-y-1{
+            transform: translateY(-100%);
+        }
+        & .vl-btn-y-2{
+            transform: translateY(0);
+        }
+        color: #fff;
+    }
+    &-sec{ 
+        background: var(--vl-gradient-1);
+        padding: 16px 24px;
+        @media #{$lg}{
+            padding: 9px;
+        }
+        font-size: 18px;
+        font-family: var( --vl-fonts-figtree);
+        border-radius: 8px;
+        display: inline-block;
+        position: relative;
+        &:hover{
+            & .vl-btn-y-1{
+                transform: translateY(-100%);
+            }
+            & .vl-btn-y-2{
+                transform: translateY(0);
+            }
+        }
+    }
+        &:hover{
+            background: var(--vl-theme-color);
+            color: #fff;
+            border-color: var(--vl-theme-color);
+            opacity: 1;
+        }
+
+    &-wrap{
+        position: relative;
+        overflow: hidden;
+        display: block;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        & span{
+            transition: .3s;
+            display: block;
+        }
+    }
+   
+    &-y-2{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        transform: translateY(100%);
+    }
+
+}

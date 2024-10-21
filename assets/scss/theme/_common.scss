@@ -1,0 +1,92 @@
+@use '../utils' as *;
+
+
+.w-img{
+	& img{
+		width: 100%;
+	}
+}
+.m-img{
+	& img{
+		max-width: 100%;
+	}
+}
+
+.fix {
+    overflow:hidden
+}
+.clear{
+    clear: both;
+}
+
+.z-index-1{
+	z-index: 1;
+}
+
+.z-index-11{
+	z-index: 11;
+}
+
+.overflow-y-visible{
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+.overflow-x-visible{
+	overflow-x: visible;
+	overflow-y: hidden;
+}
+
+.p-relative{
+	position: relative;
+}
+.p-absolute{
+	position: absolute;
+}
+
+.vl-fs{
+	&-15{
+		font-size: 15px;
+	}
+	&-20{
+		font-size: 20px;
+	}
+	&-24{
+		font-size: 24px;
+	}
+	&-30{
+		font-size: 30px;
+		@media #{$xs}{
+			font-size: 22px;
+		}
+	}
+	&-40{
+		font-size: 40px;
+		@media #{$lg}{
+			font-size: 32px;
+		}
+	}
+}
+
+
+.vl-nblue{
+	background-color: var(--vl-theme-color);
+}
+.vl-gradient{
+	background-color: var(--vl-gradient-1);
+}
+.vl-black-bg{
+	background-color: var(--vl-black);
+}
+.vl-white-bg{
+	background-color: var(--vl-white);
+}
+.vl-white{
+	color: var(--vl-white);
+}
+
+
+.vl{
+	&-medium{
+		font-weight: 500;
+	}
+}

@@ -1,0 +1,119 @@
+@use '../../utils' as *;
+
+.vl-footer{
+    &-content{
+        p {
+            color:#fff;
+            opacity: .8;
+            font-size: 18px;
+            line-height: 26px;
+            margin: 0;
+        }
+    }
+    &-social{
+        ul{
+            li{
+                display: inline-block;
+            }
+            a{
+                height: 32px;
+                width: 32px;
+                background: #273366;
+                color: #fff;
+                display: block;
+                line-height: 34px;
+                text-align: center;
+                border-radius: 50px;
+                margin-right: 7px;
+                transition: .3s;
+                overflow: hidden;
+                font-size: 16px;
+                position: relative;
+                z-index: 1;
+                &:after{
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 0;
+                    background: var(--vl-gradient-1);
+                    z-index: -1;
+                    transition: .3s;
+                }
+                &:hover:after{
+                    width: 100%;
+                }
+            }
+            
+        }
+    }
+    &-widget{
+        &-title{
+            line-height: 28px;
+        }
+        &-3{
+            &.ml-40 {
+                @media #{$md,$xs}{
+                    margin-left: 0px;
+                }
+            }
+        }
+
+        &-4{
+            margin-left: 120px;
+            @media #{$md,$xs}{
+                margin-left: 0;
+            }
+            p{
+                color: #fff;
+                opacity: .8;
+                font-size: 18px;
+                line-height: 26px;
+            }
+        }
+    }
+    &-menu{
+        & ul{
+            & li{
+                & a{
+                    color:#fff;
+                    opacity: .8;
+                    transition: .3s;
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                    display: block;
+                    &:hover{
+                        color: #fff;
+                        opacity: 1;
+                        transition: .3s;
+                    }
+                }
+            }
+        }
+    }
+    &-newsletter{
+        & {
+            input[type=email] {
+            border-radius: 4px;
+            }
+        }
+        &-btn{
+            & .vl-btn-sec{
+                width: 100%;
+                text-align:center;
+            }
+        }
+    }
+    
+    &-copyright{
+        &-text{
+            color: var(--vl-white-8);
+            padding: 24px 0;
+            margin: 0;
+            border-top: 1px solid #585D79;
+        }
+    }
+}
+
+

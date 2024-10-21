@@ -1,0 +1,224 @@
+@use '../../utils' as *;
+
+
+.vl-transparent-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+
+.test-bg{
+    background:var(--vl-gradient-1)
+}
+.bg{
+    background: #000;
+    height: 100vh;
+}
+
+.vl-header-area {
+    @media #{$md,$xs}{
+        padding-bottom: 24px;
+        padding-top: 24px;
+    }
+}
+
+.vl-main-menu{
+    & ul{
+        & > li{
+            display: inline-block;
+            margin-right: 30px;
+            @media #{$lg}{
+                margin-right: 20px;
+            }
+            position: relative;
+            & > a{
+                color: #fff;
+                font-family: var(--vl-fonts-figtree);
+                font-size: 18px;
+                display: inline-block;
+                position: relative;
+                transition: .3s;
+                padding: 24px 0;
+               & span {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+            }
+            &:hover{
+                & a{
+                    color: var(--vl-theme-color-2);
+                    &:before{
+                        opacity: 1;
+                        top: 0;
+                    }
+                }
+            }
+            & .sub-menu{
+                position: absolute;
+                top: 105%;
+                width:180px;
+                left: 0;
+                background: #fff;
+                padding: 16px 0;
+                opacity: 0;
+                visibility: hidden;
+                box-shadow: 0px 20px 30px rgba(1,15,28,0.1);
+                transition: .3s;
+               
+                
+                & li{
+                    margin-right: 0;
+                    display: block;
+                    text-align: start;
+                    & a{
+                        color: #000;
+                        display: block;
+                        padding: 4px 25px;
+                        font-size: 17px;
+                        &:before{
+                            display: none;
+                        }
+                    }
+                    & .sub-menu{
+                        left: 100%;
+                        top: 105%;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: .3s;
+                    }
+                    &:hover{
+                        & > a{
+                            color: #0057FC;
+                        }
+                        & > .sub-menu{
+                            opacity: 1;
+                            visibility: visible;
+                            top: 0;
+                        }
+                    }
+
+                    
+                }
+            }
+
+            &:hover{
+                & a{
+                    color: var(--vl-theme-color-2);
+                }
+                & .sub-menu{
+                    opacity: 1;
+                    visibility: visible;
+                    top: 100%;
+                }
+            }
+
+        }
+    }
+    &-black{
+        & ul{
+            & li{
+                & a{
+                    color: #0A0E1A;
+                    &:before{
+                        color: var(--vl-theme-orange);
+                    }
+                }
+                &:hover{
+                    & a{
+                        color: var(--vl-theme-orange);
+                    }
+                }
+                & .sub-menu{
+                    & li{
+                        &:hover{
+                            & > a{
+                                color: var(--vl-theme-orange);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// mega-menu
+
+.vl-main-menu ul > li:hover .vl-mega-menu{
+    opacity: 1;
+    visibility: visible;
+    transition: .3s;
+    top: 100%;
+}
+
+.vl-mega-menu {
+    position: absolute;
+    left: -311px;
+    top: 105%;
+    width: 1267px;
+    background: #fff;
+    padding: 25px;
+    padding-bottom: 0;
+    box-shadow: 0px 20px 30px rgba(1,15,28,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+
+    @media #{$lg}{
+        left: -162px;
+        width: 929px;
+    }
+
+    @media #{$md,$xs}{
+        width: auto;
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+        position: static;
+        display: none;
+    }
+}
+
+.vl-home-thumb {
+    text-align: center;
+}
+
+.vl-home-title {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 14px;
+}
+
+.vl-home-thumb img {
+    box-shadow: 0px 2px 6px rgba(1,15,28,0.2);
+}
+
+@keyframes vlfadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .vlfadeInDown {
+    animation: vlfadeInDown 1s ease-out forwards;
+  }
+
+// stiky header
+.header-sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #333;
+    -webkit-animation: .7s ease-in-out 0s normal none 1 running vlfadeInDown;
+    animation: .7s ease-in-out 0s normal none 1 running vlfadeInDown;
+
+}
